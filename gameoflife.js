@@ -13,9 +13,9 @@ let count = 1;
 // }, 1000);
 
 
-let width = 5; //tables width
-let height = 5; //tables height
-let times = 50; //how many times game will generate
+let width = 50; //tables width
+let height = 50; //tables height
+//let times = 50; //how many times game will generate
 let tableWidth = '400px'; // max-width limited to 100vw
 let tableHeight = '400px'; // max-height limited to 100vh
 let timeInterval = 250;
@@ -133,5 +133,22 @@ function printTable(area, era) {
         console.log(row, i);
     }
     console.log('------------------');
+    buildTable(area[era]);
 }
 
+function buildTable(array) {
+    let html = ``;
+    for (let row = 0; row < array.length; row++) {
+        html += `<tr>`;
+        for (let column = 0; column < array[0].length; column++) {
+            if (array[row][column] == '■')
+                html += `<td class="live"></td>`;
+            else
+                html += `<td></td>`;
+        }
+        html += `</tr>`;
+    }
+    let table = document.getElementById("game");
+    table.innerHTML = html;
+    table.style = `width: ${tableWidth}; height: ${tableHeight}`;
+}
