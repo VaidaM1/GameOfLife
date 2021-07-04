@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    background-color: rgba(154, 139, 206, 0.281);
+  }
+
+h1 {
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 40px;
+    color:rgb(45, 11, 168);
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+  }
+
+#game,
+#game td {
+    border: 1px solid black;
+  }
+
+#game {
+    border-collapse: collapse;
+    table-layout: fixed;
+    max-height: 100vh;
+    max-width: 100vw;
+    background-color: white;
+  }
+
+.live {
+    background: rgb(75, 38, 209);
+  }
